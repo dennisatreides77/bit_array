@@ -21,8 +21,8 @@ namespace bit {
 	public:
 		inline static t_index calc_request_word_number(t_index size_per_bit)
 		{
-			t_index sw = sizeof(t_word) << 3;
-			return t_index((size_per_bit + (sw - 1)) / sw);
+			t_index word_size_per_bit = sizeof(t_word) << 3;
+			return t_index((size_per_bit + (word_size_per_bit - 1)) / word_size_per_bit);
 		}
 
 	private:
@@ -52,105 +52,105 @@ namespace bit {
 		}
 
 	public:
-		t_index operator - (const t_this& obj)
+		inline t_index operator - (const t_this& obj)
 		{
 			return this->position - obj->position;
 		}
-		t_this operator + (t_index offset) const
+		inline t_this operator + (t_index offset) const
 		{
 			return t_this(this->position + offset);
 		}
-		t_this operator - (t_index offset) const
+		inline t_this operator - (t_index offset) const
 		{
 			return t_this(this->position - offset);
 		}
-		t_this& operator += (t_index offset)
+		inline t_this& operator += (t_index offset)
 		{
 			this->position += offset;
 			return *this;
 		}
-		t_this& operator -= (t_index offset)
+		inline t_this& operator -= (t_index offset)
 		{
 			this->position -= offset;
 			return *this;
 		}
-		t_this& operator ++ ()
+		inline t_this& operator ++ ()
 		{
 			++this->position;
 			return *this;
 		}
-		t_this operator ++ (int)
+		inline t_this operator ++ (int)
 		{
 			return t_this(this->position + 1);
 		}
-		t_this& operator -- ()
+		inline t_this& operator -- ()
 		{
 			--this->position;
 			return *this;
 		}
-		t_this operator -- (int)
+		inline t_this operator -- (int)
 		{
 			return t_this(this->position - 1);
 		}
 
 	public:
-		bool operator == (t_index position)
+		inline bool operator == (t_index position) const
 		{
 			return this->position == position;
 		}
-		bool operator == (t_this position)
+		inline bool operator == (t_this position) const
 		{
 			return this->position == position.position;
 		}
-		bool operator != (t_index position)
+		inline bool operator != (t_index position) const
 		{
 			return this->position != position;
 		}
-		bool operator != (t_this position)
+		inline bool operator != (t_this position) const
 		{
 			return this->position != position.position;
 		}
-		bool operator <= (t_index position)
+		inline bool operator <= (t_index position) const
 		{
 			return this->position <= position;
 		}
-		bool operator <= (t_this position)
+		inline bool operator <= (t_this position) const
 		{
 			return this->position <= position.position;
 		}
-		bool operator < (t_index position)
+		inline bool operator < (t_index position) const
 		{
 			return this->position < position;
 		}
-		bool operator < (t_this position)
+		inline bool operator < (t_this position) const
 		{
 			return this->position < position.position;
 		}
-		bool operator >= (t_index position)
+		inline bool operator >= (t_index position) const
 		{
 			return this->position >= position;
 		}
-		bool operator >= (t_this position)
+		inline bool operator >= (t_this position) const
 		{
 			return this->position >= position.position;
 		}
-		bool operator > (t_index position)
+		inline bool operator > (t_index position) const
 		{
 			return this->position > position;
 		}
-		bool operator > (t_this position)
+		inline bool operator > (t_this position) const
 		{
 			return this->position > position.position;
 		}
 
 	public:
-		t_this& operator = (t_index position)
+		inline t_this& operator = (t_index position)
 		{
 			this->position = position;
 			return *this;
 		}
 
-		t_this& operator = (const t_this& obj)
+		inline t_this& operator = (const t_this& obj)
 		{
 			this->position = obj.position;
 			return *this;
