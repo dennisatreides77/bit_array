@@ -33,6 +33,16 @@ public:
 		return;
 	}
 
+	inline t_index get_words_count(void) const
+	{
+		return array.size();
+	}
+
+	inline const t_word* get_words(void) const
+	{
+		return array.data();
+	}
+
 	inline bool tst_position(t_position pos) const
 	{
 		return pos < size;
@@ -61,6 +71,26 @@ public:
 		return get_at(pos);
 	}
 
+	inline void set_all(void)
+	{
+		std::fill(array.begin(), array.end(), t_word(-1));
+	}
+
+	inline void clear_all(void)
+	{
+		std::fill(array.begin(), array.end(), t_word(0));
+	}
+
+	inline void push_back(bool value)
+	{
+		t_index request_size	= t_position::calc_request_word_number(size.get() + 1);
+		if (request_size != array.size())
+			array.push_back(value ? t_word(1) : t_word(0));
+		else
+			set_at(size, value);
+		++size;
+		return;
+	}
 
 public:
 	t_this& operator = (const t_this& obj)

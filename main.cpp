@@ -16,5 +16,9 @@ int main(int argc, char*argv[])
 	t_bit_array a6(arr, 3, 10);
 	t_bit_array a7(arr, 3, 33);
 
+	a4.set_all();
+	a5.clear_all();
+	a2.push_back(true);
+
 	return 0;
 }
