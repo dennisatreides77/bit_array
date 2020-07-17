@@ -33,22 +33,22 @@ public:
 		return;
 	}
 
-	inline bool tst_index(t_index index) const
+	inline bool tst_position(t_position pos) const
 	{
-		return index < size;
+		return pos < size;
 	}
 
-	inline bool get_at(t_index index) const
+	inline bool get_at(t_position pos) const
 	{
-		t_index idx = index / sizeof(t_word);
-		t_index off = index % sizeof(t_word);
+		t_index idx = pos.get_index();
+		t_index off = pos.get_offset();
 		return (array[idx] & (1 << off)) != 0;
 	}
 
-	inline void set_at(t_index index, bool val)
+	inline void set_at(t_position pos, bool val)
 	{
-		t_index idx = index / sizeof(t_word);
-		t_index off = index % sizeof(t_word);
+		t_index idx = pos.get_index();
+		t_index off = pos.get_offset();
 		if(val)
 			array[idx] |= (1 << off);
 		else
@@ -56,9 +56,9 @@ public:
 		return;
 	}
 
-	inline bool operator [] (t_index index) const
+	inline bool operator [] (t_position pos) const
 	{
-		return get_at(index);
+		return get_at(pos);
 	}
 
 

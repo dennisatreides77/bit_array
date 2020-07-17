@@ -98,25 +98,49 @@ namespace bit {
 		{
 			return this->position == position;
 		}
+		bool operator == (t_this position)
+		{
+			return this->position == position.position;
+		}
 		bool operator != (t_index position)
 		{
 			return this->position != position;
+		}
+		bool operator != (t_this position)
+		{
+			return this->position != position.position;
 		}
 		bool operator <= (t_index position)
 		{
 			return this->position <= position;
 		}
+		bool operator <= (t_this position)
+		{
+			return this->position <= position.position;
+		}
 		bool operator < (t_index position)
 		{
 			return this->position < position;
+		}
+		bool operator < (t_this position)
+		{
+			return this->position < position.position;
 		}
 		bool operator >= (t_index position)
 		{
 			return this->position >= position;
 		}
+		bool operator >= (t_this position)
+		{
+			return this->position >= position.position;
+		}
 		bool operator > (t_index position)
 		{
 			return this->position > position;
+		}
+		bool operator > (t_this position)
+		{
+			return this->position > position.position;
 		}
 
 	public:
