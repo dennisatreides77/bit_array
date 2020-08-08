@@ -98,7 +98,7 @@ namespace bit {
 		{
 			return this->position == position;
 		}
-		inline bool operator == (t_this position) const
+		inline bool operator == (const t_this& position) const
 		{
 			return this->position == position.position;
 		}
@@ -106,7 +106,7 @@ namespace bit {
 		{
 			return this->position != position;
 		}
-		inline bool operator != (t_this position) const
+		inline bool operator != (const t_this& position) const
 		{
 			return this->position != position.position;
 		}
@@ -114,7 +114,7 @@ namespace bit {
 		{
 			return this->position <= position;
 		}
-		inline bool operator <= (t_this position) const
+		inline bool operator <= (const t_this& position) const
 		{
 			return this->position <= position.position;
 		}
@@ -122,7 +122,7 @@ namespace bit {
 		{
 			return this->position < position;
 		}
-		inline bool operator < (t_this position) const
+		inline bool operator < (const t_this& position) const
 		{
 			return this->position < position.position;
 		}
@@ -130,7 +130,7 @@ namespace bit {
 		{
 			return this->position >= position;
 		}
-		inline bool operator >= (t_this position) const
+		inline bool operator >= (const t_this& position) const
 		{
 			return this->position >= position.position;
 		}
@@ -138,7 +138,7 @@ namespace bit {
 		{
 			return this->position > position;
 		}
-		inline bool operator > (t_this position) const
+		inline bool operator > (const t_this& position) const
 		{
 			return this->position > position.position;
 		}
