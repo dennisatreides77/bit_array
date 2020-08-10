@@ -35,8 +35,7 @@ namespace bit {
 		}
 		inline t_index	set(t_index position)
 		{
-			this->position = position;
-			return;
+			return this->position = position;
 		}
 		inline t_index	get_index(void) const
 		{

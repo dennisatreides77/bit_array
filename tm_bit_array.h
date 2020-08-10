@@ -24,12 +24,12 @@ private:
 public:
 	inline t_index get_size(void) const
 	{
-		return size;
+		return size.get();
 	}
 
 	inline void set_size(t_index size_per_bit)
 	{
-		array.resize(t_position::calc_size_per_words(size_per_bit), t_word(0));
+		array.resize(t_position::calc_size_per_words(size.set(size_per_bit)), t_word(0));
 		return;
 	}
 
